@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyFlix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>MyFlix</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Watch the Best Movies</h2>
+      <p>Stream your favorite movie anytime, anywhere.</p>
+      <button id="startWatchingBtn">Start Watching</button>
+    </div>
+  </section>
+
+  <!-- Movie Categories -->
+  <main class="movie-categories" id="movieCategories">
+    <section>
+      <h2 style="text-align: center;">Trending Now</h2>
+      <div class="movie-slider">
+        <!-- Multiple Movie Cards -->
+        <div class="movie-card"><img src="image/moana-2.jpg" alt="Movie 1"><h3>Moana 2</h3></div>
+        <div class="movie-card"><img src="image/mufasa.jpg" alt="Movie 2"><h3>Mufasa : The Lion King</h3></div>
+        <div class="movie-card"><img src="image/squid-game-2.jpg" alt="Movie 3"><h3>Squid Game 2</h3></div>
+        <div class="movie-card"><img src="image/avatar.jpg" alt="Movie 4"><h3>Avatar : The Last Airbender</h3></div>
+        <div class="movie-card"><img src="image/kingdom-planet-apes.jpg" alt="Movie 5"><h3>Kingdom Of The Planet Of The Apes</h3></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align: center;">Top Rated</h2>
+      <div class="movie-slider">
+        <!-- Multiple Movie Cards -->
+        <div class="movie-card"><img src="image/dune-2.jpg" alt="Movie 6"><h3>Dune : Part 2</h3></div>
+        <div class="movie-card"><img src="image/megalopolis.jpg" alt="Movie 7"><h3>Megalopolis</h3></div>
+        <div class="movie-card"><img src="image/gladiator-2.jpg" alt="Movie 8"><h3>Gladiador 2</h3></div>
+        <div class="movie-card"><img src="image/nowhere-special.jpg" alt="Movie 9"><h3>Nowhere Special</h3></div>
+        <div class="movie-card"><img src="image/supacell.jpg" alt="Movie 10"><h3>Supacell</h3></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 MyFlix. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    // JavaScript to scroll to Movie Categories when "Start Watching" is clicked
+    document.addEventListener("DOMContentLoaded", () => {
+      const startButton = document.querySelector("#startWatchingBtn");
+      const movieCategories = document.querySelector("#movieCategories");
+
+      startButton.addEventListener("click", () => {
+        movieCategories.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // Optional: Adding hover effect on movie cards
+      const movieCards = document.querySelectorAll(".movie-card");
+      movieCards.forEach(card => {
+        card.addEventListener("mouseover", () => {
+          card.style.transform = "scale(1.1)";
+          card.style.transition = "transform 0.3s ease";
+        });
+
+        card.addEventListener("mouseout", () => {
+          card.style.transform = "scale(1)";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
